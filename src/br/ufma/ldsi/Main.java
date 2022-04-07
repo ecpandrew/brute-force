@@ -11,14 +11,15 @@ public class Main {
     }
 
     static public void bruteForce( int[] array, int number ){
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if(!(i == j)){
-                    if((array[i] - array[j]) == number){
-                        System.out.println("Subtracao entre "+array[i]+" e "+array[j]+" = "+ number);
+        for (int i = 0; i < array.length; i++) { // N
+            for (int j = 0; j < array.length; j++) { // N
+                if(!(i == j)){ // 1
+                    if((array[i] - array[j]) == number){ // 1
+                        System.out.println("Subtracao entre "+array[i]+" e "+array[j]+" = "+ number); // 1
                     }
                 }
             }
         }
-    }
+    } // Complexidade: N²
+     //  ou 2N+3
 }
