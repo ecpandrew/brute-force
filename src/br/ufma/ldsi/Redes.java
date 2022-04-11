@@ -36,6 +36,13 @@ public class Redes {
     static int linha6_estrela[] = new int[] {0, 0, 0, 1, 0, 0};
 
 
+    static int linha1_anel[] = new int[] {0, 1, 0, 0, 0, 1};
+    static int linha2_anel[] = new int[] {1, 0, 1, 0, 0, 0};
+    static int linha3_anel[] = new int[] {0, 1, 0, 1, 0, 0};
+    static int linha4_anel[] = new int[] {0, 0, 1, 0, 1, 0};
+    static int linha5_anel[] = new int[] {0, 0, 0, 1, 0, 1};
+    static int linha6_anel[] = new int[] {1, 0, 0, 0, 1, 0};
+
     static int[][] matriz_malha_completa = new int[][]{
             linha1_malha, linha2_malha, linha3_malha, linha4_malha, linha5_malha, linha6_malha};
 
@@ -45,6 +52,8 @@ public class Redes {
     static int[][] matriz_estrela2 = new int[][]{
             linha1_estrela2, linha2_estrela2, linha3_estrela2,  linha4_estrela2,   linha5_estrela2, linha6_estrela2};
 
+    static int[][] matriz_anel = new int[][]{
+            linha1_anel, linha2_anel, linha3_anel,  linha4_anel,   linha5_anel, linha6_anel};
 
 
 }

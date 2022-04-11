@@ -9,9 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
 //        testeBruteForce();
-        testeTopologia(matriz_estrela2);
-        testeTopologia(matriz_estrela);
-
+//        testeTopologia(matriz_estrela2);
+//        testeTopologia(matriz_estrela);
+        testeTopologia(matriz_anel);
     }
 
     private static void testeTopologia(int[][] matriz) {
@@ -76,13 +76,33 @@ public class Main {
 
     }
 
-    private static boolean ehTopologiaAnel(int[][] matriz) {
-        boolean topologiaAnel = false;
+    private static boolean ehTopologiaAnel(int[][] matriz) { // O(n³)
+        boolean topologiaAnel = true;
         // cada linha da matriz, so pode ter 2 elementos true para a topologia anel
-
-
+        for (int i = 0; i < matriz.length; i++) { // n
+            if(count(matriz[i],1)!=2){ // n
+                return false;
+            }
+            for (int j = 0; j < matriz[i].length; j++) { // n
+                if(i==j){
+                    boolean elemento_central_igual_zero = matriz[i][j] == 0;
+                    int indice_anterior = j-1;
+                    int indice_posterior = j+1;
+                    if(j == 0){
+                        indice_anterior = matriz.length-1;
+                    }
+                    if(j==matriz.length-1){
+                        indice_posterior = 0;
+                    }
+                    boolean elemento_anterior_igual_um  = matriz[i][indice_anterior] == 1;
+                    boolean elemento_posterior_igual_um  = matriz[i][indice_posterior] == 1;
+                    if (!elemento_central_igual_zero || !elemento_anterior_igual_um || !elemento_posterior_igual_um) {
+                        return false;
+                    }
+                }
+            }
+        }
         return topologiaAnel;
-
     }
 
     static public void bruteForce( int[] array, int number ){
